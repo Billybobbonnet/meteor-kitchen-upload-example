@@ -1,0 +1,95 @@
+<template name="uploader">
+
+
+
+  <div class= "col-md-12">
+    <input type = "file" id="file" class = "fileBrowse" >
+    {{#each uploadQueueItems}}
+    <div class="row">
+      {{#if isError}}
+      <div class="col-md-12">
+        <br>
+        <div id="error-text" class="alert alert-dismissible alert-danger">
+          <button type="button" class="btn btn-lg btn-danger del-error close" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+          </button>
+
+          {{ errorText }}
+
+        </div>
+      </div>
+      {{else}}
+      <div class="col-md-3">
+        {{#if isImage}}
+        <a href="{{link}}">
+          <img class="img-thumbnail" alt="[ preview of {{shortFilename 16}} will display here ]" src="{{link}}"  data-type="image" width="150">
+        </a>
+        {{else}}
+        {{#if isPlayableVideo}}
+        <video width = "150" src="{{link}}"  controls>
+        No preview available.
+              </video>
+              {{else}}
+              <a href="#">
+                <img class="media-object" src="..." width="150" alt="No preview">
+              </a>
+              {{/if}}
+              {{/if}}
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <a href="{{link}}?download=true">{{Filename}}</a>
+                <button class="btn btn-sm btn-danger del-file pull-right">
+                  <i class="fa fa-times fa-2x"></i>
+                </button>
+              </div>
+              <div class = "row">
+
+                {{#if length}}
+                {{formattedLength}}
+
+                {{else}}
+                {{uploadStatus}} {{#if isUploading }}- {{uploadProgress}} % {{/if}}
+
+                <div class = "progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{uploadProgress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{uploadProgress}}%">
+                    <span class="sr-only">{{uploadProgress}}%</span>
+                  </div>
+                </div>
+
+                {{/if}}
+              </div>
+            </div>
+            {{/if}}
+          </div>
+
+
+          {{else}}
+          {{ #unless isMultipleMode}}
+          <div class="input-div fade well fileDrop " >
+            <div class = "row">
+              <muted><i class="fa fa-upload fa-3x" ></i></muted>
+            </div>
+            <div class = "row">
+              <muted><small><b>Click</b> to browse or <b>drag &amp; drop</b> your files here.</small></muted>
+            </div>
+          </div>
+          {{/unless}}
+          {{/each}}
+          {{ #if isMultipleMode}}
+          <div class="row">
+            <div class="col-md-12">
+              <div class="input-div fade well fileDrop " >
+                <div class = "row">
+                  <muted><i class="fa fa-upload fa-3x" ></i></muted>
+                </div>
+                <div class = "row">
+                  <muted><small><b>Click</b> to browse or <b>drag &amp; drop</b> your files here.</small></muted>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/if}}
+        </div>
+
+      </template>

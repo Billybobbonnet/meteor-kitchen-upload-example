@@ -8,6 +8,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+coffeescript@1.0.6
 copleykj:livestamp@1.1.6
 ddp@1.1.0
 deps@1.0.7
@@ -45,6 +46,7 @@ mongo@1.1.0
 mrt:moment@2.8.1
 natestrauser:font-awesome@4.3.0
 npm-bcrypt@0.7.8_2
+numeral:numeral@1.5.3
 observe-sequence@1.0.6
 ordered-dict@1.0.3
 perak:user-roles@1.0.10
@@ -68,5 +70,6 @@ tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3
 url@1.0.4
+vsivsi:file-collection@1.0.6
 webapp@1.2.0
 webapp-hashing@1.0.3

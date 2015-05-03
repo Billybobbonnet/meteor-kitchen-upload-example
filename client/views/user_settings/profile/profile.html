@@ -20,8 +20,9 @@
 			<div class="alert alert-warning">
 				{{errorMessage}}
 			</div>
-			{{/if}}		
-		
+
+			{{/if}}
+
 			{{#if infoMessage}}
 			<div class="alert alert-success">
 				{{infoMessage}}
@@ -51,6 +52,16 @@
 					</span>
 				</div>
 			</div>
+
+			<div class="form-group  field-profile-image">
+				<label for="profile.image">
+					Image
+				</label>
+				<div class="input-div">
+					{{ > uploader filetypefilter="video" mode="single" sizelimit="200" }}
+				</div>
+			</div>
+
 			<div class="form-group  field-profile-facebook">
 				<label for="profile.facebook">
 					Facebook URL
@@ -111,4 +122,3 @@
 		</form>
 	</div>
 </template>
-

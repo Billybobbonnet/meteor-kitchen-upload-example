@@ -1,7 +1,5 @@
 @import "../bootstrap3-less/bootstrap.import.less";
 
-@navbar_height: 50px;
-
 @import "../theme/theme.import.less";
 
 // variables
@@ -32,7 +30,7 @@ body {
 }
 
 .navbar-spacer {
-	height: @navbar_height;
+	height: 50px;
 }
 
 .nav-stacked li {
@@ -99,6 +97,33 @@ p {
 	margin: 20px auto;
 }
 
+// **** FileDrop ***
+
+.fileDrop {
+	text-align:center;
+}
+
+.fileDrop.in {
+
+}
+.fileDrop.hover {
+    background: lawngreen;
+}
+.fileDrop.fade {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    opacity: 1;
+}
+// **** FileBrowse ***
+
+.fileBrowse {
+  visibility: hidden;//we hide the fileBrowse sine it is opened using js, when clicking on fileBrowse
+}
+
+
 // **** SIDEBAR ***
 
 .sidebar {
@@ -118,9 +143,9 @@ p {
 }
 
 .menu-item-collapse div.collapse li a {
-	padding-right: 5px;	
-}
 
+	padding-right: 5px;
+}
 // **** ACCOUNT ****
 
 .account-form {
@@ -144,7 +169,8 @@ p {
 .accounts-info-box {
 	max-width: 400px;
 	padding: 15px;
-	margin: 0 auto;	
+  margin: 0 auto;
+
 }
 
 /* ------------------ */
@@ -163,7 +189,9 @@ p {
 }
 
 .th-sortable {
-	cursor: pointer;	
+
+	cursor: pointer;
+
 }
 
 .table-hover tr {
@@ -197,19 +225,17 @@ ul.object-tree li a {
 }
 
 ul.object-tree {
-	padding-left: 10px;	
+
+	padding-left: 10px;
 }
 
 ul.object-tree ul.object-tree {
-	padding-left: 20px;	
+	padding-left: 20px;
 }
 
 li.collapsed ul {
-	display: none;	
-}
+	display: none;
 
-li.active > a > span.text-muted {
-	color: inherit;
 }
 
 .object-tree.nav > li > a {
@@ -268,16 +294,4 @@ ul.tree-view ul.tree-view {
 
 .tree-view-item-link:hover .tree-view-item-submenu {
 	opacity: 1;
-}
-
-// **** LOADING ****
-
-.loading {
-	display: relative;
-	vertical-align: middle;
-	padding: 50px 0; // to avoid seeing it top when loading main pages
-	text-align: center;
-	i {
-		color: @gray-lighter;
-	}
 }
